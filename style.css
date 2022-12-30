@@ -5,9 +5,14 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+::selection{
+    color: #ffff;
+    background: rgb(142, 73, 232);
+}
 body{
     height: 100vh;
     width: 100%;
+    padding: 10px;
     background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
 }
 .wrapper{
@@ -17,6 +22,7 @@ body{
    background: #fff;
    border-radius: 5px;
    padding: 25px;
+   box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
 }
 .wrapper header{
     font-size: 30px;
@@ -36,6 +42,10 @@ body{
     font-size: 17px;
     border-radius: 3px;
     padding-left: 15px;
+    transition: all 0.3s ease;
+}
+.inputField input:focus{
+    border-color: #8E49E8;
 }
 .inputField button{
     width: 60px;
@@ -44,12 +54,17 @@ body{
     outline: none;
     background: #BE49E8;
     color: #fff;
-    font-size: 22px;
+    font-size: 21px;
     cursor: pointer;
     border-radius: 3px;
     margin-left: 5px;
-    opacity: 0.0;
+    opacity: 0.6;
     pointer-events: none;
+    transition: all 0.3s ease;
+}
+.inputField button:hover,
+.footer button:hover{
+    background: #721ce3;
 }
 .inputField button.active{
     opacity: 1;
@@ -67,20 +82,24 @@ body{
     background: #f2f2f2;
     border-radius: 3px;
     margin-bottom: 8px;
-    padding: 0 15px;
+    padding: 10px 15px;
     cursor: default;
     overflow: hidden;
+    word-wrap: break-word;
 }
 .todoList li span{
     position: absolute;
     right: -45px;
+    top: 50%;
+    transform: translateY(-50%);
     color: #fff;
     width: 45px;
     text-align: center;
     background: #e74c3c;
-    border-radius: 0 4px 3px 0;
+    padding: 10px 15px;
+    border-radius: 0 3px 3px 0;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 .todoList li:hover span{
     right: 0px;
@@ -89,7 +108,7 @@ body{
     display: flex;
     width: 100%;
     align-items: center;
-    margin-top: 26px;
+    margin-top: 20px;
     justify-content: space-between;
 }
 .footer button{
@@ -98,7 +117,17 @@ body{
     background: #BE49E8;
     color: #fff;
     font-size: 16px;
+    font-weight: 400;
+    margin-left: 5px;
     cursor: pointer;
+    user-select: none;
     border-radius: 3px;
     padding: 6px 10px;
+    opacity: 0.6;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.footer button.active{
+    opacity: 1;
+    pointer-events: auto;
 }
